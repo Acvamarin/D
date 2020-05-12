@@ -29,10 +29,19 @@ class UserProfile extends React.Component {
           <div className="col-md-6 mx-auto">
             <div className="row">
               <div className="col-8">
-                <h2 className="profile-username">{user.name}</h2>
+                <h2 className="profile-username">{user.name}{user.lastName}</h2>
                 <p>
-                  <strong>Registered: </strong>
+                  <strong>Регистрация: </strong>
                   {new Date(user.createdDate).toDateString()}
+                </p>
+                  <p>
+                  <strong>Статус: </strong>
+                </p>
+                  <p>
+                  <strong>День рождения: </strong>
+                </p>
+                  <p>
+                  <strong>Место учёбы: </strong>
                 </p>
               </div>
               <div className="col-4 text-center">

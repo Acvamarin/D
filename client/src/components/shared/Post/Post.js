@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import { remove } from '../../../actions/post'
+import { remove, update } from '../../../actions/post'
 
 import Like from './Like'
 import ProfileImage from '../ProfileImage'
@@ -15,6 +15,7 @@ class Post extends React.Component {
   }
 
   onDelete = () => this.props.remove(this.props.post._id)
+  onUpdate = () => this.props.update(this.props.post._id)
 
   render() {
     const { post, auth, TYPE } = this.props
@@ -40,8 +41,11 @@ class Post extends React.Component {
                 <button className="btn btn-link dropdown-toggle" type="button" id="drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 <div className="dropdown-menu dropdown-menu-right" aria-labelledby="drop">
                   <a className="dropdown-item" role="button" onClick={this.onDelete}>Remove</a>
+                  <a className="dropdown-item" role="button" onClick={this.onUpdate}>Update</a>
                 </div>
+                
               </div>
+              
             )}
           </div>
         </div>
@@ -59,11 +63,12 @@ class Post extends React.Component {
 
 Post.propTypes = {
   remove: PropTypes.func.isRequired,
+  update: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
-  TYPE: PropTypes.string.isRequired
-}
+  TYPE: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = (state) => ({ auth: state.auth })
 
-export default connect(mapStateToProps, { remove })(Post)
+export default connect(mapStateToProps, { remove, update })(Post)

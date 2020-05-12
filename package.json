@@ -15,7 +15,7 @@
   },
   "author": "Makavchik Kirill",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "bcryptjs": "^2.4.3", 
     "dotenv": "^7.0.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.7.0",

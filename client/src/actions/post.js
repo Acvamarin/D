@@ -7,7 +7,8 @@ import {
   GET_POST,
   DELETE_POST,
   CLEAR_POSTS,
-  UPDATE_POST
+  UPDATE_POST,
+  UPDATE_POSTS
 } from './types'
 
 export const create = (post) => (dispatch) => {
@@ -55,6 +56,14 @@ export const remove = (id) => (dispatch) => {
       payload: id
     }))
 }
+export const update = (id) => (dispatch) => {
+  axios.put(`/api/posts/${id}`).then(() =>
+    dispatch({
+      type: UPDATE_POST,
+      payload: id,
+    })
+  );
+};
 
 export const createLike = (postId, TYPE) => (dispatch) => {
   axios
