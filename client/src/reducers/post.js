@@ -8,8 +8,8 @@ import {
   DELETE_POST,
   CLEAR_POSTS
 } from '../actions/types'
-
 const initialState = {
+  
   posts: [],
   totalCount: 0,
   post: null,
@@ -43,6 +43,7 @@ export default (state = initialState, action) => {
         isLoading: false
       }
     case ADD_POST:
+      
       return {
         ...state,
         posts: [action.payload, ...state.posts]
@@ -66,3 +67,4 @@ export default (state = initialState, action) => {
       return state
   }
 }
+

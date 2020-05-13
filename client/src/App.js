@@ -18,6 +18,8 @@ import SinglePost from './components/single-post/SinglePost'
 import UserProfile from './components/user-profile/UserProifle'
 import Feed from './components/feed/Feed'
 import NotFound from './components/not-found/NotFound'
+import UpdatePost from './components/shared/UpdatePost'
+
 
 if (localStorage.access_token) {
   const { access_token } = localStorage
@@ -42,6 +44,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route exact path="/" component={AllPosts} />
             <Route path="/post/:id" component={SinglePost} />
+            <Route path="/posts/:id/put" component={UpdatePost} />
             <Route path="/user/:id" component={UserProfile} />
             <Switch>
               <PrivateRoute path="/feed" component={Feed} />
@@ -52,7 +55,7 @@ function App() {
         </React.Fragment>
       </BrowserRouter>
     </Provider>
-  )
+  );
 }
 
 export default App

@@ -5,27 +5,39 @@ const privatePaths = require('mongoose-private-paths')
 const userSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
-   lastName: {
+  lastName: {
     type: String,
-    required: true
+    required: true,
+  },
+  status: {
+    type: String,
+    required: true,
+  },
+  happyBirthday: {
+    type: String,
+    required: true,
+  },
+  placeLes: {
+    type: String,
+    required: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
     required: true,
-    private: true
+    private: true,
   },
   createdDate: {
     type: Date,
-    default: Date.now
-  }
-})
+    default: Date.now,
+  },
+});
 
 userSchema.plugin(privatePaths)
 

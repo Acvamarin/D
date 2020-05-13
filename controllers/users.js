@@ -1,16 +1,17 @@
-const Router = require('koa-router')
+const Router = require("koa-router");
 
-const User = require('../models/User')
+const User = require("../models/User");
 
-const router = new Router().prefix('/users')
+const router = new Router().prefix("/users");
 
-router.get('/:_id', async (ctx) => {
-  const user = await User.findById(ctx.params._id)
+router.get("/:_id", async (ctx) => {
+  const user = await User.findById(ctx.params._id);
   if (user) {
-    ctx.body = user
+    ctx.body = user;
   } else {
-    ctx.throw(404)
+    ctx.throw(404);
   }
-})
+});
 
-module.exports = router.routes()
+
+module.exports = router.routes();

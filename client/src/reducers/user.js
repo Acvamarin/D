@@ -11,15 +11,15 @@ export default (state = initialState, action) => {
     case USER_LOADING:
       return {
         ...state,
-        isLoading: action.payload
-      }
+        isLoading: action.payload,
+      };
     case GET_USER:
       return {
         ...state,
         user: action.payload,
-        isLoading: false
-      }
+        isLoading: false,
+      };
     default:
-      return state
+      return state;
   }
 }

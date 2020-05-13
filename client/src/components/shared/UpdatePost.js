@@ -3,20 +3,22 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Quill from 'react-quill'
 
-import { create } from '../../actions/post'
+import { update } from '../../actions/post'
 
-class PostForm extends React.Component {
+
+
+class UpdatePost extends React.Component {
 
   constructor() {
     super()
-    this.state = { body: '' }
+    this.state = {body: ``}
   }
 
   onChangeBody = (body) => this.setState({ body })
 
   onSubmit = (e) => {
     e.preventDefault()
-    this.props.create(this.state)
+    this.props.update(this.state)
     this.setState({ body: '' })
   }
 
@@ -40,8 +42,9 @@ class PostForm extends React.Component {
                 onChange={this.onChangeBody}
               />
             </div>
+              
             <div className="btn-group float-right">
-              <button type="submit" className="btn btn-dark">Add</button>
+              <button type="submit" className="btn btn-dark">Update</button>
             </div>
           </form>
         </div>
@@ -50,11 +53,12 @@ class PostForm extends React.Component {
   }
 }
 
-PostForm.propTypes = {
-  create: PropTypes.func.isRequired,
+UpdatePost.propTypes = {
+  update: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 }
 
-const mapStateToProps = (state) => ({ auth: state.auth })
+const mapStateToProps = (state) => ({ auth: state.auth,
+})
 
-export default connect(mapStateToProps, { create })(PostForm)
+export default connect(mapStateToProps, { update })(UpdatePost)

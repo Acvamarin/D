@@ -9,6 +9,7 @@ import Posts from '../shared/Posts'
 import ProfileImage from '../shared/ProfileImage'
 import Subscription from './Subscription'
 
+
 class UserProfile extends React.Component {
 
   componentDidMount() {
