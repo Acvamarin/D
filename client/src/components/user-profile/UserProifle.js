@@ -30,20 +30,27 @@ class UserProfile extends React.Component {
           <div className="col-md-6 mx-auto">
             <div className="row">
               <div className="col-8">
-                <h2 className="profile-username">{user.name}{user.lastName}</h2>
+                <h2 className="profile-username">
+                  {user.name}
+                  {user.lastName}
+                </h2>
                 <p>
                   <strong>Регистрация: </strong>
                   {new Date(user.createdDate).toDateString()}
                 </p>
-                  <p>
+                <p>
                   <strong>Статус: </strong>
+                  {user.status}
                 </p>
-                  <p>
+                <p>
                   <strong>День рождения: </strong>
+                  {user.happyBirthday}
                 </p>
-                  <p>
+                <p>
                   <strong>Место учёбы: </strong>
+                  {user.placeLes}
                 </p>
+                <Subscription userId={user._id} />
               </div>
               <div className="col-4 text-center">
                 <ProfileImage user={user} />
@@ -67,7 +74,9 @@ class UserProfile extends React.Component {
           </div>
         </div>
       </React.Fragment>
-    ) : <Loader />
+    ) : (
+      <Loader />
+    );
   }
 }
 
@@ -79,7 +88,8 @@ UserProfile.propTypes = {
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  auth: state.auth
+  auth: state.auth,
+  subscriptions: state.subscription.lengths
 })
 
 export default connect(mapStateToProps, { getUserById })(UserProfile)
