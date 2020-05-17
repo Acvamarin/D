@@ -44,7 +44,7 @@ class Posts extends React.Component {
       <React.Fragment>
         {isLoading && <Loader />}
         {!isLoading && totalCount === 0 && (
-          <div className="text-center">
+          <div className="text-center ">
             <h2>There is nothing</h2>
           </div>
         )}

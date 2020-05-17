@@ -19,7 +19,7 @@ class Post extends React.Component {
   render() {
     const { post, auth, TYPE } = this.props;
     return (
-      <div className="card mb-4">
+      <div className="card mb-4 bg-dark px-2 ">
         <div className="card-header">
           <div className="d-flex justify-content-between align-items-center">
             <div className="d-flex justify-content-between align-items-center">
@@ -28,7 +28,7 @@ class Post extends React.Component {
                   <ProfileImage user={post.user} width="50" />
                 </Link>
               </div>
-              <div className="ml-2">
+              <div className="ml-2 text-white ">
                 <div className="h5 m-0">{post.user.name}</div>
                 <div className="h7 text-muted">
                   <i className="fa fa-clock-o"></i>{" "}
@@ -37,7 +37,7 @@ class Post extends React.Component {
               </div>
             </div>
             {auth.isAuthenticated && auth.user.name === post.user.name && (
-              <div className="dropdown">
+              <div className="dropdown bg-white">
                 <button
                   className="btn btn-link dropdown-toggle"
                   type="button"
@@ -67,11 +67,11 @@ class Post extends React.Component {
             )}
           </div>
         </div>
-        <div className="card-body" ref="body"></div>
-        <div className="card-footer">
+        <div className="card-body bg-white  " ref="body"></div>
+        <div className="card-footer ">
           <Like postId={post._id} likes={post.likes} TYPE={TYPE} />
           <Link to={"/post/" + post._id} className="card-link">
-            <i > comment</i>
+            <i> comment</i>
           </Link>
           <Link to={"/posts/" + post._id + "/put"} className="card-link">
             update

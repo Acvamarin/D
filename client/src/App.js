@@ -35,26 +35,29 @@ if (localStorage.access_token) {
 
 function App() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <React.Fragment>
-          <Header />
-          <div className="container">
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
-            <Route exact path="/" component={AllPosts} />
-            <Route path="/post/:id" component={SinglePost} />
-            <Route path="/posts/:id/put" component={UpdatePost} />
-            <Route path="/user/:id" component={UserProfile} />
-            <Switch>
-              <PrivateRoute path="/feed" component={Feed} />
-            </Switch>
-            <Route path="/404" component={NotFound} />
-          </div>
-          <Footer />
-        </React.Fragment>
-      </BrowserRouter>
-    </Provider>
+    <div className='bg-color'>
+      <Provider store={store}>
+        <BrowserRouter>
+          <React.Fragment>
+            <Header />
+
+            <div className="container">
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route exact path="/" component={AllPosts} />
+              <Route path="/post/:id" component={SinglePost} />
+              <Route path="/posts/:id/put" component={UpdatePost} />
+              <Route path="/user/:id" component={UserProfile} />
+              <Switch>
+                <PrivateRoute path="/feed" component={Feed} />
+              </Switch>
+              <Route path="/404" component={NotFound} />
+            </div>
+            <Footer />
+          </React.Fragment>
+        </BrowserRouter>
+      </Provider>
+    </div>
   );
 }
 

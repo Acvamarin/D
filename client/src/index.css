@@ -2,6 +2,9 @@
 .navbar-brand {
   font-family: 'Righteous', cursive;
 }
+.bg-color {
+  background: url(./images/f97929bceaaa250c185431d560b96d33.jpg);
+}
 
 .navbar-collapse, .profile-username, .subscribe-btn {
   font-family: 'Acme', sans-serif;

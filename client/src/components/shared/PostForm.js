@@ -21,10 +21,10 @@ class PostForm extends React.Component {
 
   render() {
     return (
-      <div className="card mb-4">
+      <div className="card mb-4 bg-secondary">
         <div className="card-body">
           <form onSubmit={this.onSubmit}>
-            <div className="form-group">
+            <div className="form-group bg-white" >
               <Quill
                 placeholder="Write something here!"
                 theme="snow"
@@ -54,7 +54,7 @@ class PostForm extends React.Component {
               />
             </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">
-              Add
+              Add Post
             </button>
           </form>
         </div>
