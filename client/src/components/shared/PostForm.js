@@ -1,24 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import Quill from 'react-quill'
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Quill from "react-quill";
 
-import { create } from '../../actions/post'
+import { create } from "../../actions/post";
 
 class PostForm extends React.Component {
-
   constructor() {
-    super()
-    this.state = { body: '' }
+    super();
+    this.state = { body: "" };
   }
 
-  onChangeBody = (body) => this.setState({ body })
+  onChangeBody = (body) => this.setState({ body });
 
   onSubmit = (e) => {
-    e.preventDefault()
-    this.props.create(this.state)
-    this.setState({ body: '' })
-  }
+    e.preventDefault();
+    this.props.create(this.state);
+    this.setState({ body: "" });
+  };
 
   render() {
     return (
@@ -27,34 +26,48 @@ class PostForm extends React.Component {
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <Quill
-                placeholder="What's up?"
+                placeholder="Write something here!"
                 theme="snow"
                 modules={{
                   toolbar: [
-                    ['bold', 'italic', 'underline', 'strike'],
-                    ['link', 'image', 'video'],
-                    ['clean']
-                  ]
+                    ["bold", "italic", "underline", "strike"], // toggled buttons
+                    ["blockquote", "code-block"],
+
+                    [{ header: 1 }, { header: 2 }], // custom button values
+                    [{ list: "ordered" }, { list: "bullet" }],
+                    [{ script: "sub" }, { script: "super" }], // superscript/subscript
+                    [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+                    [{ direction: "rtl" }], // text direction
+
+                    [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+                    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+                    [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+                    [{ font: [] }],
+                    [{ align: [] }],
+
+                    ["clean"], // remove formatting button
+                  ],
                 }}
                 value={this.state.body}
                 onChange={this.onChangeBody}
               />
             </div>
-            <div className="btn-group float-right">
-              <button type="submit" className="btn btn-dark">Add</button>
-            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              Add
+            </button>
           </form>
         </div>
       </div>
-    )
+    );
   }
 }
 
 PostForm.propTypes = {
   create: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
-}
+  auth: PropTypes.object.isRequired,
+};
 
-const mapStateToProps = (state) => ({ auth: state.auth })
+const mapStateToProps = (state) => ({ auth: state.auth });
 
-export default connect(mapStateToProps, { create })(PostForm)
+export default connect(mapStateToProps, { create })(PostForm);

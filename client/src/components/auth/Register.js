@@ -35,7 +35,7 @@ class Register extends React.Component {
     return (
       <div className="row mt-4">
         <div className="col-4 mx-auto">
-          <div className="card">
+          <div className="card bg-secondary text-white">
             <article className="card-body">
               <h4 className="card-title text-center mb-4 mt-1">Registration</h4>
               <form onSubmit={this.onSubmit}>
@@ -173,7 +173,7 @@ class Register extends React.Component {
                 </div>
 
                 <div className="form-group">
-                  <button type="submit" className="btn btn-dark btn-block">
+                  <button type="submit" className="btn btn-primary btn-block">
                     Register
                   </button>
                 </div>

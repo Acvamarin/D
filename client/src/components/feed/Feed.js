@@ -18,11 +18,13 @@ class Feed extends React.Component {
     const { isLoading, subscriptions } = this.props.subscription
     return !isLoading ? (
       <div className="row mt-4">
-        <div className="col-md-6 mx-auto">
+        <div className="col-md-8 mx-auto">
           {subscriptions.length !== 0 ? (
-            <Posts queryParams={{
-              users: subscriptions.map((s) => s.profile).join(',')
-            }} />
+            <Posts
+              queryParams={{
+                users: subscriptions.map((s) => s.profile).join(","),
+              }}
+            />
           ) : (
             <div className="text-center">
               <h2>You have no subscriptions</h2>
@@ -30,7 +32,9 @@ class Feed extends React.Component {
           )}
         </div>
       </div>
-    ) : <Loader />
+    ) : (
+      <Loader />
+    );
   }
 }
 

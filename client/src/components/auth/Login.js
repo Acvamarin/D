@@ -29,9 +29,9 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="row mt-4">
-        <div className="col-4 mx-auto">
-          <div className="card">
+      <div className="row mt-5">
+        <div className="col-4 mx-auto my-auto">
+          <div className="card bg-secondary text-white">
             <article className="card-body">
               <h4 className="card-title text-center mb-4 mt-1">Log In</h4>
               <form onSubmit={this.onSubmit}>
@@ -74,14 +74,16 @@ class Login extends React.Component {
                   </div>
                 </div>
                 <div className="form-group">
-                  <button type="submit" className="btn btn-dark btn-block">Login</button>
+                  <button type="submit" className="btn btn-primary btn-block">
+                    Login
+                  </button>
                 </div>
               </form>
             </article>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

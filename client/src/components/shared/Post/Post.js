@@ -71,9 +71,9 @@ class Post extends React.Component {
         <div className="card-footer">
           <Like postId={post._id} likes={post.likes} TYPE={TYPE} />
           <Link to={"/post/" + post._id} className="card-link">
-            <i className="fa fa-arrow-right"></i>
+            <i > comment</i>
           </Link>
-          <Link to={"/posts/" + post._id+"/put"} className="card-link">
+          <Link to={"/posts/" + post._id + "/put"} className="card-link">
             update
           </Link>
         </div>

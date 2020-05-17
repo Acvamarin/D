@@ -68,7 +68,7 @@ class UserProfile extends React.Component {
           </div>
         )}
         <div className="row mt-4">
-          <div className="col-md-6 mx-auto">
+          <div className="col-md-8 mx-auto">
             {auth.user.id === user._id && <PostForm />}
             <Posts queryParams={{ user: user._id }} />
           </div>
