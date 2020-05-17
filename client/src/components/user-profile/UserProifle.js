@@ -50,7 +50,9 @@ class UserProfile extends React.Component {
                   <strong>Место учёбы: </strong>
                   {user.placeLes}
                 </p>
-                <Subscription userId={user._id} />
+                {(auth.user.id === user._id) && (
+                  <Subscription userId={user._id} />
+                )}
               </div>
               <div className="col-4 text-center">
                 <ProfileImage user={user} />

@@ -64,6 +64,22 @@ export const update = (id) => (dispatch) => {
     })
   );
 };
+export const createDisLike = (postId, TYPE) => (dispatch) => {
+  axios.post(`/api/posts/${postId}/dislikes`).then((res) =>
+    dispatch({
+      type: TYPE,
+      payload: res.data,
+    })
+  );
+};
+export const removeDisLike = (postId, dislikeId, TYPE) => (dispatch) => {
+  axios.delete(`/api/posts/${postId}/dislikes/${dislikeId}`).then((res) =>
+    dispatch({
+      type: TYPE,
+      payload: res.data,
+    })
+  );
+};
 
 export const createLike = (postId, TYPE) => (dispatch) => {
   axios

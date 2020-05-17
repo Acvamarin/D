@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { remove, update } from "../../../actions/post";
 
 import Like from "./Like";
+import DisLike from "./DisLike";
 import ProfileImage from "../ProfileImage";
 
 class Post extends React.Component {
@@ -70,6 +71,7 @@ class Post extends React.Component {
         <div className="card-body bg-white  " ref="body"></div>
         <div className="card-footer ">
           <Like postId={post._id} likes={post.likes} TYPE={TYPE} />
+          <DisLike postId={post._id} dislikes={post.dislikes} TYPE={TYPE} />
           <Link to={"/post/" + post._id} className="card-link">
             <i> comment</i>
           </Link>

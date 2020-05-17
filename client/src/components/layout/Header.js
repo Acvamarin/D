@@ -20,7 +20,7 @@ class Header extends React.Component {
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i className="fa fa-user"></i>
-            Account
+            My Page
           </a>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
             <Link className="dropdown-item" to={'/user/' + user.id}>My Profile</Link>
@@ -80,7 +80,7 @@ class Header extends React.Component {
                 <li className="nav-item">
                   <Link className="nav-link text-white" to="/feed">
                     <i className="fa fa-users"></i>
-                    Watch
+                    Subscribers
                   </Link>
                 </li>
               )}

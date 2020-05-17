@@ -27,7 +27,7 @@ class Feed extends React.Component {
             />
           ) : (
             <div className="text-center">
-              <h2>You have no subscriptions</h2>
+              <h2>No subscribers</h2>
             </div>
           )}
         </div>
