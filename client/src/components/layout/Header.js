@@ -54,8 +54,8 @@ class Header extends React.Component {
     return (
       <nav className="navbar navbar-icon-top navbar-expand-lg navbar navbar-dark bg-primary ">
         <div className="container">
-          <Link className="navbar-brand text-white" to="/">
-            Makava
+          <Link className="navbar-brand text-white " to="/">
+          <i className="fa fa-server"></i>
           </Link>
           <button
             className="navbar-toggler"
@@ -83,6 +83,20 @@ class Header extends React.Component {
                     Subscribers
                   </Link>
                 </li>
+                
+
+
+              )}
+                {isAuthenticated && (
+                <li className="nav-item">
+                  <Link className="nav-link text-white" to="/find">
+                    <i className="fa fa-search"></i>
+                    Search
+                  </Link>
+                </li>
+                
+
+
               )}
             </ul>
             <ul className="navbar-nav">{links}</ul>

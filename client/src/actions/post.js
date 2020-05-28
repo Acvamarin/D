@@ -8,7 +8,6 @@ import {
   DELETE_POST,
   CLEAR_POSTS,
   UPDATE_POST,
-  UPDATE_POSTS
 } from './types'
 
 export const create = (post) => (dispatch) => {
