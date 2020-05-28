@@ -12,6 +12,16 @@ export const getUserById = (id) => (dispatch) => {
     }))
     .catch(() => dispatch(setUserLoading(false)))
 }
+export const getUserByName = (name) => (dispatch) => {
+  dispatch(setUserLoading(true))
+  axios
+    .get(`/api/users/${name}`)
+    .then((res) => dispatch({
+      type: GET_USER,
+      payload: res.data
+    }))
+    .catch(() => dispatch(setUserLoading(false)))
+}
 
 const setUserLoading = (isLoading) => ({
   type: USER_LOADING,

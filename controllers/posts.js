@@ -28,7 +28,7 @@ router.get('/', async (ctx) => {
 })
 
 router.get('/:id', async (ctx) => {
-  const post = await Post.findById(ctx.params.id)
+  const post = await Post.findById(ctx.params.id )
   if (post) {
     ctx.body = post
   } else {

@@ -12,6 +12,16 @@ router.get("/:_id", async (ctx) => {
     ctx.throw(404);
   }
 });
+router.get("/name", async (ctx) => {
+  const user = await User.findById(ctx.params.name);
+  if (user) {
+    ctx.body = user;
+  } else {
+    ctx.throw(404);
+  }
+});
+
+
 
 
 module.exports = router.routes();

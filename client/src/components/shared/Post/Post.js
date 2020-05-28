@@ -37,7 +37,7 @@ class Post extends React.Component {
                 </div>
               </div>
             </div>
-            {auth.isAuthenticated && auth.user.name === post.user.name && (
+            {auth.isAuthenticated && auth.user.name === post.user.name &&  (
               <div className="dropdown bg-white">
                 <button
                   className="btn btn-link dropdown-toggle"

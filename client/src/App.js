@@ -19,6 +19,7 @@ import UserProfile from './components/user-profile/UserProifle'
 import Feed from './components/feed/Feed'
 import NotFound from './components/not-found/NotFound'
 import UpdatePost from './components/shared/UpdatePost'
+import Filtrs from './components/all-posts/Filtrs'
 
 
 if (localStorage.access_token) {
@@ -48,6 +49,9 @@ function App() {
               <Route path="/post/:id" component={SinglePost} />
               <Route path="/posts/:id/put" component={UpdatePost} />
               <Route path="/user/:id" component={UserProfile} />
+              <Switch>
+                <PrivateRoute exact path="/find" component={Filtrs} />
+              </Switch>
               <Switch>
                 <PrivateRoute path="/feed" component={Feed} />
               </Switch>

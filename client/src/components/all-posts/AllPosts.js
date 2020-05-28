@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-
+import Filtrs from './Filtrs'
 import PostForm from '../shared/PostForm'
 import Posts from '../shared/Posts'
 
@@ -12,7 +12,9 @@ class AllPosts extends React.Component {
     return (
       
         <div className="row mt-4">
+          
           <div className="col-md-8 mx-auto">
+          <Filtrs/>
             {auth.isAuthenticated && <PostForm />}
             <Posts queryParams={{}} />
           </div>

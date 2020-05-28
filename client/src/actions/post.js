@@ -19,7 +19,6 @@ export const create = (post) => (dispatch) => {
       payload: res.data
     }))
 }
-
 export const getAll = (params) => (dispatch) => {
   dispatch(setPostLoading(true))
   axios
