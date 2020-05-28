@@ -9,6 +9,7 @@ import {getAll} from '../../actions/post'
 
 import Post from './../shared/Post/Post'
 import Loader from './../shared/Loader/Loader'
+import { url } from 'koa-router'
 
 class Filtrs extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class Filtrs extends React.Component {
       }
     
       handleSubmit(event) {
-        alert('Отправленное имя: ' + this.state.value);
+        alert('Отправленное имя: ' + window.location.href);
         event.preventDefault();
       }
 
@@ -43,17 +44,18 @@ class Filtrs extends React.Component {
     render() {
 
         const { isLoading, posts, totalCount } = this.props.post
-        return (
+        return(
 
             <React.Fragment><div className="row mt-4">
 
                 <div className="col-md-8 mx-auto">
-                    <div className='d1'>
-                        <form onSubmit={this.handleSubmit}>
+                {window.location.href =='http://localhost:3000/find' &&( <div className='d1'>
+                    
+                       <form onSubmit={this.handleSubmit}>
                             <input vtype="text" value={this.state.value} onChange={this.handleChange} placeholder="Искать здесь..."></input>
                             <button type="submit"></button>
                         </form>
-                    </div>
+                    </div>)}
                
 
                     {isLoading && <Loader />}
