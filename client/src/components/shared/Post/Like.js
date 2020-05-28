@@ -9,6 +9,7 @@ class Like extends React.Component {
   onLikeClick = (e) => {
     e.preventDefault()
     const { auth, postId, likes, TYPE } = this.props
+    
     if (auth.isAuthenticated) {
       const existedLike = likes.find((l) => l.user === auth.user.id)
       if (existedLike) {
@@ -20,7 +21,7 @@ class Like extends React.Component {
   }
 
   render() {
-    const { likes } = this.props
+    const { likes  } = this.props
     return (
       <a
         href="#"

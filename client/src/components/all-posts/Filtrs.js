@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Pagination from "react-js-pagination"
-
+import { UPDATE_POSTS } from '../../actions/types'
 
 import './Filtrs.css'
 import {getAll} from '../../actions/post'
@@ -64,7 +64,7 @@ class Filtrs extends React.Component {
                             <h2>There is nothing</h2>
                         </div>
                     )}
-                    {posts.map((p) => { if (p.user.name == this.state.value) { return <Post post={p} key={p._id} /> } })}
+                    {posts.map((p) => { if (p.user.name == this.state.value) { return <Post post={p} key={p._id} TYPE={UPDATE_POSTS}/> } })}
 
                 </div>
             </div>

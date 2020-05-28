@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Pagination from "react-js-pagination"
 
-
+import { UPDATE_POSTS } from '../../actions/types'
 
 import { getAll } from '../../actions/post'
 
@@ -49,7 +49,7 @@ class Posts extends React.Component {
             <h2>There is nothing</h2>
           </div>
         )}
-        {posts.map((p) => <Post post={p} key={p._id} />)}
+        {posts.map((p) => <Post post={p} key={p._id} TYPE={UPDATE_POSTS} />)}
         {!isLoading && totalCount > posts.length && (
           <Pagination
             activePage={this.state.activePage}

@@ -14,8 +14,12 @@ router.post('/', passport.authenticate('jwt', { session: false }), async (ctx) =
   if (post.likes.find((l) => l.user.toString() === user.toString())) {
     ctx.throw(400, 'User already liked this post')
   }
-  post.likes.unshift({ user })
-  ctx.body = await post.save()
+  if (!post.dislikes.find((l) => l.user.toString() === user.toString())) {
+    post.likes.unshift({ user })
+    ctx.body = await post.save()
+  }
+
+
 })
 
 router.delete('/:likeId', passport.authenticate('jwt', { session: false }), async (ctx) => {

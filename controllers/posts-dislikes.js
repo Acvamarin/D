@@ -17,8 +17,11 @@ router.post(
     if (post.dislikes.find((l) => l.user.toString() === user.toString())) {
       ctx.throw(400, "User already liked this post");
     }
-    post.dislikes.unshift({ user });
-    ctx.body = await post.save();
+    if (!post.likes.find((l) => l.user.toString() === user.toString())) {
+      post.dislikes.unshift({ user });
+      ctx.body = await post.save();
+    }
+
   }
 );
 
