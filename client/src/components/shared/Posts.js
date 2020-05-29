@@ -10,7 +10,7 @@ import { getAll } from '../../actions/post'
 import Post from './Post'
 import Loader from './Loader'
 
-const LIMIT = 10
+const LIMIT = 2
 
 class Posts extends React.Component {
 
@@ -51,7 +51,10 @@ class Posts extends React.Component {
         )}
         {posts.map((p) => <Post post={p} key={p._id} TYPE={UPDATE_POSTS} />)}
         {!isLoading && totalCount > posts.length && (
-          <Pagination
+      
+            <Pagination
+            prevPageText='prev'
+            nextPageText='next'
             activePage={this.state.activePage}
             itemsCountPerPage={LIMIT}
             totalItemsCount={totalCount}
@@ -59,6 +62,7 @@ class Posts extends React.Component {
             itemClass="page-item"
             linkClass="page-link"
           />
+      
         )}
       </React.Fragment>
     )
