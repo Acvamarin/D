@@ -32,6 +32,7 @@ class PostForm extends React.Component {
                   toolbar: [
                     ["bold", "italic", "underline", "strike"], // toggled buttons
                     ["blockquote", "code-block"],
+                    ['link', 'image', 'video'],
 
                     [{ header: 1 }, { header: 2 }], // custom button values
                     [{ list: "ordered" }, { list: "bullet" }],
