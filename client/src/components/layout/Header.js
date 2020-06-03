@@ -39,13 +39,13 @@ class Header extends React.Component {
           <li className="nav-item">
             <Link className="nav-link text-white" to="/login">
               <i className="fa fa-sign-in"></i>
-              Log In
+              Вход
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link text-white" to="/register">
               <i className="fa fa-user-plus"></i>
-              Register
+              Регистрация
             </Link>
           </li>
         </React.Fragment>
@@ -73,14 +73,14 @@ class Header extends React.Component {
               <li className="nav-item">
                 <Link className="nav-link text-white" to="/">
                   <i className="fa fa-university"></i>
-                  All Posts
+                  Все посты
                 </Link>
               </li>
               {isAuthenticated && (
                 <li className="nav-item">
                   <Link className="nav-link text-white" to="/feed">
                     <i className="fa fa-users"></i>
-                    Subscribers
+                    Подписки
                   </Link>
                 </li>
                 
@@ -91,7 +91,7 @@ class Header extends React.Component {
                 <li className="nav-item">
                   <Link className="nav-link text-white" to="/find">
                     <i className="fa fa-search"></i>
-                    Search
+                    Поиск
                   </Link>
                 </li>
                 

@@ -32,7 +32,7 @@ class Login extends React.Component {
         <div className="col-4 mx-auto my-auto">
           <div className="card bg-secondary text-white">
             <article className="card-body">
-              <h4 className="card-title text-center mb-4 mt-1">Log In</h4>
+              <h4 className="card-title text-center mb-4 mt-1">Вход</h4>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <div className="input-group">
@@ -77,7 +77,7 @@ class Login extends React.Component {
                     type="submit"
                     className="btn btn-primary btn-block"
                   >
-                    Login
+                    Войти
                   </button>
                 </div>
               </form>

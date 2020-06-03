@@ -31,8 +31,9 @@ class UserProfile extends React.Component {
             <div className="row">
               <div className="col-8">
                 <h2 className="profile-username">
-                  {user.name}
-                  {user.lastName}
+                  <div className="col-md-1"><div>{user.name}</div>
+                    <div>{user.lastName}</div> </div>
+
                 </h2>
                 <p>
                   <strong>Регистрация: </strong>
@@ -77,8 +78,8 @@ class UserProfile extends React.Component {
         </div>
       </React.Fragment>
     ) : (
-      <Loader />
-    );
+        <Loader />
+      );
   }
 }
 

@@ -56,7 +56,7 @@ class Post extends React.Component {
                     role="button"
                     onClick={this.onDelete}
                   >
-                    Remove
+                    Удалить
                   </a>
                   <a
                     className="dropdown-item"
@@ -73,10 +73,7 @@ class Post extends React.Component {
           <Like postId={post._id} likes={post.likes} TYPE={TYPE} />
           <DisLike postId={post._id} dislikes={post.dislikes} TYPE={TYPE} />
           <Link to={"/post/" + post._id} className="card-link">
-            <i> comment</i>
-          </Link>
-          <Link to={"/posts/" + post._id + "/put"} className="card-link">
-            update
+            <i>комментировать</i>
           </Link>
         </div>
       </div>

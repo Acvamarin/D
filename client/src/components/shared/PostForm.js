@@ -26,7 +26,7 @@ class PostForm extends React.Component {
           <form onSubmit={this.onSubmit}>
             <div className="form-group bg-white" >
               <Quill
-                placeholder="Write something here!"
+                placeholder="Напиши что-нибудь!"
                 theme="snow"
                 modules={{
                   toolbar: [
@@ -55,7 +55,7 @@ class PostForm extends React.Component {
               />
             </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">
-              Add Post
+              Добавить пост
             </button>
           </form>
         </div>
