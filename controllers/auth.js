@@ -2,7 +2,7 @@ const Router = require("koa-router");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const User = require("../models/User");
+const User = require("../models/Users");
 const config = require("../lib/config");
 
 const router = new Router().prefix("/auth");

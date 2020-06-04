@@ -3,18 +3,18 @@ const { Strategy, ExtractJwt }  = require('passport-jwt')
 const config = require('./config')
 const User = require('../models/Users')
 
-const password = {
+const opts = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: config.secret
 }
 
-module.exports = (pass) => {
-  pass.use(new Strategy(password, async (e, log) => {
-    const online = await User.findById(e.id)
-    if (online) {
-      log(null, online)
+module.exports = (passport) => {
+  passport.use(new Strategy(opts, async (payload, done) => {
+    const user = await User.findById(payload.id)
+    if (user) {
+      done(null, user)
     } else {
-      log(null, false)
+      done(null, false)
     }
   }))
 }

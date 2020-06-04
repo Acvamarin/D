@@ -1,6 +1,6 @@
 const Router = require("koa-router");
 
-const User = require("../models/User");
+const User = require("../models/Users");
 
 const router = new Router().prefix("/users");
 

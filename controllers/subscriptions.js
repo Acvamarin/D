@@ -1,7 +1,7 @@
 const Router = require('koa-router')
 const passport = require('koa-passport')
 
-const Subscription = require('../models/Subscription')
+const Subscription = require('../models/Subcrip')
 
 const router = new Router().prefix('/subscriptions')
 

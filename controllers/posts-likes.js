@@ -1,7 +1,7 @@
 const Router = require('koa-router')
 const passport = require('koa-passport')
 
-const Post = require('../models/Post')
+const Post = require('../models/Forms')
 
 const router = new Router().prefix('/posts/:postId/likes')
 

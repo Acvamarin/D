@@ -60,18 +60,18 @@ const postSchema = new Schema({
   },
 });
 
-const populationFields = 'user comments.user'
+const commentsUser = 'user comments.user'
 
-postSchema.post('save', async (doc) => {
-  await doc.populate(populationFields).execPopulate()
+postSchema.post('save', async (e) => {
+  await e.populate(commentsUser).execPopulate()
 })
 
-function populateFields() {
-  this.populate(populationFields)
+function commentUser() {
+  this.populate(commentsUser)
 }
 
-postSchema.pre('find', populateFields)
-postSchema.pre('findOne', populateFields)
-postSchema.pre('findOneAndUpdate', populateFields)
+postSchema.pre('find', commentUser)
+postSchema.pre('findOne', commentUser)
+postSchema.pre('findOneAndUpdate', commentUser)
 
 module.exports = mongoose.model('posts', postSchema)

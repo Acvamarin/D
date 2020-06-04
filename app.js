@@ -5,15 +5,15 @@ const handlers = require('./handlers')
 const controllers = require('./controllers')
 const mongooseConfig = require('./lib/mongoose-config')
 
-const app = new Koa()
+const koa = new Koa()
 
-handlers.forEach((h) => app.use(h))
+handlers.forEach((h) => koa.use(h))
 
-app.use(controllers.routes())
-app.use(controllers.allowedMethods())
+koa.use(controllers.routes())
+koa.use(controllers.allowedMethods())
 
 module.exports = (callback) => {
   mongooseConfig()
-  app.listen(config.port, callback)
-  return app
+  koa.listen(config.port, callback)
+  return koa
 }
