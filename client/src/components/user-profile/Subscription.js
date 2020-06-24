@@ -33,7 +33,7 @@ class Subscription extends React.Component {
         className="btn btn-dark btn-block subscribe-btn"
         onClick={this.onSubClick}
       >
-        Subscribe | <i className="fa fa-users"></i> {subscriptions.length}
+       Подписок - <i className="fa fa-users"></i> {subscriptions.length}
       </button>
     )
   }
